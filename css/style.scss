@@ -79,25 +79,39 @@ header{
 a{
   color: $secondary-color;
   list-style-type: none;
-  color: $primary-color;
 }
- a:visited {
-    /* visited link */
-    color: black;
+// a:visited {
+//    /* visited link */
+//    color: black;
+//    list-style-type: none;
+//}
+//
+//a:hover {
+//    /* No underlining when hovering over a link */
+//    text-decoration: none;
+//    color: $primary-color;
+//    font-weight: 700;
+//    transition: 0.9s opacity;
+//}
+//
+//a:active {
+//    /* selected link */
+//    color: #E07A5F;
+//}
+a {
+    color: $secondary-color;
     list-style-type: none;
-}
-
-a:hover {
-    /* No underlining when hovering over a link */
-    text-decoration: none;
     color: $primary-color;
-    font-weight: 700;
-    transition: 0.9s opacity;
-}
-
-a:active {
-    /* selected link */
-    color: #E07A5F;
+        &:hover{ 
+            text-decoration: none;
+            color: $primary-color;
+            font-weight: 700;
+            transition: 0.9s opacity; }
+        &:visited{ 
+            color: black;
+            list-style-type: none; }
+        &:active{ 
+            color: #E07A5F; }
 }
 
 .content {
