@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+}
+
+:root{
+/*colors*/
+--primary-color: #00022e;
+--secondary-color: #2e5984;
+--third-color: #000000;
+--white:#ffffff;
+--primary-color-darker: darken($primary-color, 20%);
+--primary-color-lighten: lighten($primary-color, 10%);
+/*fonts*/
+--primary-font: 'Noto Sans SC', sans-serif;
+--primary-weight: 400;
+--secondary-weight: 600;
+--base: 16px;
+--headers: 20px;
+   
+}
+body {
+    background-color: white;
+    color: var(--third-color);
+    font-family: var(--primary-font);
+    font-weight: var(--primary-weight);
+    font-size: var(--base);
+    /* Sets the font size to 16px */
+    line-height: 1.6;
+    /* Sets the line-height to 1.6 */
+}
+h1{
+    font-family: var(--primary-font);
+    font-weight: var(--secondary-weight);
+    color: var(--primary-color);
+    font-size: var(--headers);
+}
+main{
+    margin: 100px 30px 30px 30px;
+    
+}
+/* style for header block*/
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+/*        background-color: red;*/
+}
+.page-header {
+    display:flex;
+    width: 100%;
+    padding: 20px;
+}
+
+/*style the base size to 200 px and allow to shrink*/
+.page-header__item{
+    flex: 0 1 200px;
+}
+
+#logo {
+    width: 200px;
+    height: 70px;
+}
+/*the last child is the menubar*/
+.page-header__item:last-child{
+    flex-grow: 1;
+    text-align: right;
+
+}
+
+/*get rid off the bullet from the list*/
+.navigation-list {
+    list-style-type: none;
+}
+
+.navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+/*base font color*/
+a {
+    color: var(--secondary-color);
+    list-style-type: none;
+}
+
+a:visited {
+    /* visited link */
+    color: black;
+    list-style-type: none;
+}
+
+a:hover {
+    /* No underlining when hovering over a link */
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    transition: 0.9s opacity;
+}
+
+a:active {
+    /* selected link */
+    color: var(--secondary-color);
+}
+
+.content {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+table {
+    margin-left: 0;
+}
+
+.profile {
+    max-width: 700px;
+/*    margin: 0 auto;*/
+   margin: 250px auto;
+}
+
+.profile__portrait {
+    float: left;
+    width: 240px;
+    height: 240px;
+    margin-right: 40px;
+    border-radius: 50%; 
+}
+
+#contact-form{
+/*    background-color: gainsboro;*/
+    padding: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.info{
+    color: var(--third-color);
+}
+
+/*start grid fallback*/
+.grid {
+    display: inline-block;
+    padding:20px;
+}
+/*end grid fallback*/
+
+@supports (display:grid) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+        margin: 0;
+    }
+}
+
+.grid__item {
+    background-color: lightgray;
+    width: auto;
+    min-height: auto;
+    padding: 20px;
+    margin: 0;
+}
+
+.grid__item:last-child {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+}
+
+button { /*resume button*/
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: var(primary-color);
+    color: var(--white);
+    text-decoration: none;
+    /*adds spacing to the button (this will be discussed more in-depth later) */
+    padding: 10px;
+    border-radius: 3px;
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+    border-right: 2px solid rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+}
+
+button:hover, button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+}
+.button__secondary {
+  background-color: #e0b354;
+  color: #2b2b2b;
+    border: none;
+}
+
+button:active {
+    /*selected button*/
+    
+    border-right: none;
+    border-bottom: none;
+}
+
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.button, button {
+  /* overwrites browser defaults */
+  /* resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* style button */
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+    color: var(--white);
+}
+
+#path1{
+    animation: 4s color-change infinite alternate linear;
+}
+/*
+#path1 {
+  animation: 5s c-move infinite alternate linear;
+}
+#path1 {
+  animation: 5s c-move-reverse infinite alternate linear;
+}
+*/
+/*Media Queries*/
+
+@media all and (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 601px) and (max-width: 800px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 800px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+/*animations*/
+
+@keyframes color-change {
+  0% {
+    fill: #002868;
+  }
+  50% {
+    fill: #bf0a30;
+  }
+  100% {
+    fill: #ffd700;
+  }
+}
+@keyframes c-move {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(.5);
+  }
+}
+@keyframes c-move-reverse {
+  from {
+    transform: scale(.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
