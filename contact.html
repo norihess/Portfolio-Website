@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,12 +28,11 @@
                         <a href="work.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Work</a>
                     </li>
                     <li role="presentation">
-                        <a href="contact.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Contact</a>
+                        <a class="current" href="contact.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Contact</a>
                     </li>
                 </ul>
             </nav>
         </header>
-
         <main>
             <h1>Contact Me</h1>
             <div class="info">
@@ -44,13 +43,13 @@
                <a href="mailto:norihess19@gmail.com">Contact me</a>
             </div>
             <br>
-            <form action="action" method="post" id="contact-form">
+            <form action="https://formspree.io/f/mnqlodnz" method="post" id="contact-form">
               <label for="email">Email: </label>
-              <input type="email" id="email" required><br><br>
+              <input type="email" id="email" name="email" required><br><br>
               <label for="tel">Telephone: </label>
-              <input type="tel" id="tel"><br><br>
+              <input type="tel" id="tel" required><br><br>
               <label for="message">Message: </label>
-              <textarea id="message" rows="5" maxlength="240"></textarea><br><br>
+              <textarea id="message" rows="5" maxlength="240" required></textarea><br><br>
               <input type="submit" value="Send message">
             </form>
 
